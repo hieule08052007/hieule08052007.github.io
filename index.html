@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Giới thiệu | Công ty của bạn</title>
-  <meta name="description" content="Website giới thiệu chuyên nghiệp">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>HIẾU CHIMTO | Website cá nhân</title>
+
+  <meta name="description"
+        content="Website cá nhân của HIẾU CHIMTO">
 
   <style>
+
     /* =========================
-       RESET
+       CÀI ĐẶT CHUNG
     ========================= */
+
     * {
       margin: 0;
       padding: 0;
@@ -23,9 +30,9 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
+      background: #05070b;
+      color: #ffffff;
       line-height: 1.6;
-      color: #1f2937;
-      background: #ffffff;
     }
 
     a {
@@ -33,288 +40,590 @@
       color: inherit;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
     .container {
-      width: min(1120px, 92%);
+      width: min(1150px, 92%);
       margin: auto;
     }
+
 
     /* =========================
        HEADER
     ========================= */
+
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
+      height: 72px;
+
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #e5e7eb;
+
+      background: rgba(5, 7, 11, 0.90);
+
+      backdrop-filter: blur(15px);
+
+      border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
     }
 
     .navbar {
-      height: 70px;
+      height: 72px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
     .logo {
-      font-size: 24px;
-      font-weight: 800;
-      color: #2563eb;
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: 1px;
+
+      color: #159cff;
     }
 
     .nav-links {
       display: flex;
+
       gap: 30px;
+
       list-style: none;
     }
 
     .nav-links a {
-      font-size: 15px;
+      color: #dce4ed;
+
       font-weight: 600;
+
       transition: 0.3s;
     }
 
     .nav-links a:hover {
-      color: #2563eb;
+      color: #159cff;
     }
 
     .menu-btn {
       display: none;
-      border: none;
+
       background: none;
+
+      border: none;
+
+      color: white;
+
       font-size: 28px;
+
       cursor: pointer;
     }
+
 
     /* =========================
        HERO
     ========================= */
+
     .hero {
       min-height: 100vh;
-      padding-top: 70px;
+
+      padding-top: 72px;
+
       display: flex;
       align-items: center;
+
       background:
-        radial-gradient(circle at 80% 20%, #dbeafe, transparent 35%),
-        linear-gradient(135deg, #eff6ff, #ffffff);
+
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(0, 145, 255, 0.25),
+          transparent 35%
+        ),
+
+        radial-gradient(
+          circle at 20% 80%,
+          rgba(0, 90, 255, 0.12),
+          transparent 35%
+        ),
+
+        #05070b;
     }
 
     .hero-content {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 60px;
+
+      grid-template-columns:
+        1.1fr 0.9fr;
+
+      gap: 70px;
+
       align-items: center;
     }
 
+    .hero-small {
+      color: #159cff;
+
+      font-size: 17px;
+
+      font-weight: 800;
+
+      margin-bottom: 18px;
+
+      letter-spacing: 1px;
+    }
+
     .hero h1 {
-      font-size: clamp(40px, 6vw, 70px);
-      line-height: 1.05;
-      margin-bottom: 25px;
-      color: #111827;
+      font-size:
+        clamp(48px, 7vw, 82px);
+
+      line-height: 0.98;
+
+      margin-bottom: 28px;
     }
 
     .hero h1 span {
-      color: #2563eb;
+      color: #159cff;
     }
 
-    .hero p {
+    .hero-description {
+      color: #aeb9c7;
+
       font-size: 19px;
-      color: #6b7280;
-      max-width: 600px;
-      margin-bottom: 35px;
+
+      max-width: 620px;
+
+      margin-bottom: 32px;
     }
 
     .buttons {
       display: flex;
-      gap: 15px;
+
+      gap: 14px;
+
       flex-wrap: wrap;
     }
 
     .btn {
-      display: inline-block;
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
       padding: 14px 25px;
+
       border-radius: 10px;
+
       font-weight: 700;
+
       transition: 0.3s;
+
       cursor: pointer;
-      border: none;
     }
 
     .btn-primary {
-      background: #2563eb;
+      background: #0799f5;
+
       color: white;
+
+      box-shadow:
+        0 10px 30px
+        rgba(0, 153, 255, 0.25);
     }
 
     .btn-primary:hover {
-      background: #1d4ed8;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+
+      background: #0085d8;
     }
 
     .btn-outline {
-      border: 2px solid #2563eb;
-      color: #2563eb;
+      border:
+        1px solid #0799f5;
+
+      color: #0799f5;
     }
 
     .btn-outline:hover {
-      background: #2563eb;
+      background: #0799f5;
+
       color: white;
     }
 
+
+    /* =========================
+       THẺ ẢNH CÁ NHÂN
+    ========================= */
+
     .hero-card {
-      background: white;
-      border-radius: 25px;
-      padding: 35px;
-      box-shadow: 0 25px 60px rgba(37, 99, 235, 0.15);
+      background:
+        linear-gradient(
+          145deg,
+          rgba(18, 25, 35, 0.95),
+          rgba(7, 11, 17, 0.95)
+        );
+
+      border:
+        1px solid
+        rgba(0, 157, 255, 0.25);
+
+      border-radius: 30px;
+
+      padding: 40px;
+
       text-align: center;
+
+      box-shadow:
+        0 30px 80px
+        rgba(0, 0, 0, 0.45);
     }
 
-    .hero-icon {
-      width: 130px;
-      height: 130px;
-      margin: auto auto 25px;
+    .avatar {
+      width: 230px;
+      height: 230px;
+
+      margin:
+        auto auto 25px;
+
       border-radius: 50%;
-      background: #dbeafe;
-      display: grid;
-      place-items: center;
-      font-size: 60px;
+
+      object-fit: cover;
+
+      border:
+        5px solid #0799f5;
+
+      box-shadow:
+        0 0 50px
+        rgba(0, 153, 255, 0.25);
+
+      background: #111923;
     }
 
-    .hero-card h3 {
-      font-size: 25px;
-      margin-bottom: 10px;
+    .hero-card h2 {
+      font-size: 30px;
+
+      margin-bottom: 8px;
     }
 
     .hero-card p {
-      font-size: 15px;
-      margin: 0;
+      color: #9da9b7;
     }
+
+
+    /* =========================
+       SOCIAL
+    ========================= */
+
+    .social-buttons {
+      display: flex;
+
+      justify-content: center;
+
+      gap: 12px;
+
+      margin-top: 25px;
+
+      flex-wrap: wrap;
+    }
+
+    .social {
+      padding:
+        11px 18px;
+
+      border-radius: 9px;
+
+      font-weight: 700;
+
+      transition: 0.3s;
+    }
+
+    .zalo {
+      background: #087eff;
+
+      color: white;
+    }
+
+    .facebook {
+      background: #1877f2;
+
+      color: white;
+    }
+
+    .social:hover {
+      transform:
+        translateY(-3px);
+
+      filter:
+        brightness(1.15);
+    }
+
 
     /* =========================
        SECTION
     ========================= */
+
     section {
       padding: 100px 0;
     }
 
     .section-title {
       text-align: center;
+
       margin-bottom: 55px;
     }
 
     .section-title h2 {
-      font-size: 40px;
+      font-size: 42px;
+
       margin-bottom: 12px;
-      color: #111827;
+    }
+
+    .section-title h2 span {
+      color: #0799f5;
     }
 
     .section-title p {
-      color: #6b7280;
+      color: #8e9aaa;
     }
 
+
     /* =========================
-       ABOUT
+       GIỚI THIỆU
     ========================= */
+
     .about {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+
+      grid-template-columns:
+        1fr 1fr;
+
       gap: 60px;
+
       align-items: center;
     }
 
-    .about-image {
-      min-height: 380px;
-      border-radius: 25px;
-      background: linear-gradient(135deg, #2563eb, #60a5fa);
-      display: grid;
-      place-items: center;
-      font-size: 100px;
-      color: white;
-      box-shadow: 0 20px 50px rgba(37, 99, 235, 0.2);
+    .about-box {
+      background: #0c1118;
+
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
+      border-radius: 20px;
+
+      padding: 35px;
     }
 
-    .about-text h3 {
-      font-size: 30px;
+    .about-box h3 {
+      font-size: 29px;
+
       margin-bottom: 20px;
     }
 
-    .about-text p {
-      color: #6b7280;
-      margin-bottom: 18px;
+    .about-box p {
+      color: #a5b0bd;
+
+      margin-bottom: 17px;
     }
 
     .check-list {
       list-style: none;
+
       margin-top: 25px;
     }
 
     .check-list li {
-      margin: 12px 0;
+      margin: 13px 0;
+
       font-weight: 600;
     }
 
     .check-list li::before {
       content: "✓";
-      color: #2563eb;
-      font-weight: bold;
+
+      color: #0799f5;
+
       margin-right: 10px;
+
+      font-weight: bold;
     }
 
+    .about-highlight {
+      min-height: 400px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 25px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #071a2a,
+          #062d47
+        );
+
+      border:
+        1px solid
+        rgba(0, 157, 255, 0.2);
+
+      font-size: 120px;
+
+      box-shadow:
+        0 25px 70px
+        rgba(0, 120, 255, 0.12);
+    }
+
+
     /* =========================
-       SERVICES
+       DỊCH VỤ
     ========================= */
+
     .services {
-      background: #f8fafc;
+      background: #080c12;
     }
 
     .service-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 22px;
     }
 
     .service-card {
-      background: white;
-      padding: 35px 25px;
+      padding: 32px;
+
+      background: #0d131b;
+
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
       border-radius: 18px;
-      border: 1px solid #e5e7eb;
+
       transition: 0.3s;
     }
 
     .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      transform:
+        translateY(-7px);
+
+      border-color:
+        rgba(0, 157, 255, 0.5);
+
+      box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.3);
     }
 
     .service-icon {
       font-size: 40px;
-      margin-bottom: 20px;
+
+      margin-bottom: 18px;
     }
 
     .service-card h3 {
-      margin-bottom: 12px;
-      font-size: 21px;
+      margin-bottom: 10px;
     }
 
     .service-card p {
-      color: #6b7280;
-      font-size: 15px;
+      color: #8f9aaa;
     }
 
+
     /* =========================
-       STATS
+       DỰ ÁN
     ========================= */
+
+    .projects {
+      background: #05070b;
+    }
+
+    .project-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 22px;
+    }
+
+    .project-card {
+      overflow: hidden;
+
+      background: #0d131b;
+
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
+      border-radius: 18px;
+
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform:
+        translateY(-8px);
+
+      border-color:
+        rgba(0, 157, 255, 0.45);
+    }
+
+    .project-image {
+      height: 190px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      font-size: 65px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #071b2b,
+          #063d63
+        );
+    }
+
+    .project-content {
+      padding: 25px;
+    }
+
+    .project-content h3 {
+      margin-bottom: 8px;
+    }
+
+    .project-content p {
+      color: #8f9aaa;
+
+      margin-bottom: 18px;
+    }
+
+    .project-link {
+      color: #0799f5;
+
+      font-weight: 700;
+    }
+
+
+    /* =========================
+       THÀNH TỰU
+    ========================= */
+
     .stats {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
       gap: 20px;
+
       text-align: center;
     }
 
@@ -323,34 +632,30 @@
     }
 
     .stat h3 {
-      color: #2563eb;
-      font-size: 42px;
-      margin-bottom: 5px;
+      color: #0799f5;
+
+      font-size: 45px;
     }
 
     .stat p {
-      color: #6b7280;
+      color: #8f9aaa;
     }
+
 
     /* =========================
-       CONTACT
+       LIÊN HỆ
     ========================= */
+
     .contact {
-      background: #111827;
-      color: white;
-    }
-
-    .contact .section-title h2 {
-      color: white;
-    }
-
-    .contact .section-title p {
-      color: #9ca3af;
+      background: #080c12;
     }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+
+      grid-template-columns:
+        1fr 1fr;
+
       gap: 50px;
     }
 
@@ -363,12 +668,18 @@
     }
 
     .contact-info p {
-      color: #9ca3af;
+      color: #8f9aaa;
     }
 
     .contact-form {
-      background: white;
       padding: 30px;
+
+      background: #0d131b;
+
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
       border-radius: 18px;
     }
 
@@ -378,28 +689,40 @@
 
     .form-group label {
       display: block;
-      color: #374151;
-      font-weight: 600;
+
       margin-bottom: 7px;
+
+      font-weight: 600;
     }
 
     .form-group input,
     .form-group textarea {
       width: 100%;
+
       padding: 13px;
-      border: 1px solid #d1d5db;
+
       border-radius: 8px;
-      font-family: inherit;
+
+      border:
+        1px solid #26313e;
+
+      background: #080c12;
+
+      color: white;
+
       outline: none;
+
+      font-family: inherit;
     }
 
     .form-group input:focus,
     .form-group textarea:focus {
-      border-color: #2563eb;
+      border-color: #0799f5;
     }
 
     textarea {
       min-height: 120px;
+
       resize: vertical;
     }
 
@@ -407,40 +730,113 @@
       width: 100%;
     }
 
+
     /* =========================
        FOOTER
     ========================= */
+
     footer {
-      background: #030712;
-      color: #9ca3af;
-      padding: 25px 0;
+      padding: 30px 0;
+
       text-align: center;
-      font-size: 14px;
+
+      background: #030507;
+
+      color: #707b89;
     }
 
+    footer span {
+      color: #0799f5;
+    }
+
+
     /* =========================
-       BACK TO TOP
+       NÚT LÊN ĐẦU
     ========================= */
+
     #topBtn {
       position: fixed;
+
       right: 20px;
+
       bottom: 20px;
+
       width: 45px;
+
       height: 45px;
+
       border: none;
+
       border-radius: 50%;
-      background: #2563eb;
+
+      background: #0799f5;
+
       color: white;
+
       font-size: 20px;
+
       cursor: pointer;
+
       display: none;
+
       z-index: 999;
     }
+
+
+    /* =========================
+       NÚT FACEBOOK + ZALO NỔI
+    ========================= */
+
+    .floating-social {
+      position: fixed;
+
+      right: 20px;
+
+      bottom: 80px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 10px;
+
+      z-index: 998;
+    }
+
+    .floating-social a {
+      width: 48px;
+
+      height: 48px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 50%;
+
+      color: white;
+
+      font-weight: bold;
+
+      box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.35);
+
+      transition: 0.3s;
+    }
+
+    .floating-social a:hover {
+      transform: scale(1.1);
+    }
+
 
     /* =========================
        MOBILE
     ========================= */
-    @media (max-width: 768px) {
+
+    @media (max-width: 800px) {
 
       .menu-btn {
         display: block;
@@ -448,14 +844,20 @@
 
       .nav-links {
         position: absolute;
-        top: 70px;
+
+        top: 72px;
+
         left: 0;
+
         width: 100%;
-        background: white;
-        flex-direction: column;
-        gap: 0;
+
+        background: #080c12;
+
         display: none;
-        border-top: 1px solid #e5e7eb;
+
+        flex-direction: column;
+
+        gap: 0;
       }
 
       .nav-links.active {
@@ -464,7 +866,10 @@
 
       .nav-links li {
         padding: 15px 5%;
-        border-bottom: 1px solid #f1f5f9;
+
+        border-bottom:
+          1px solid
+          rgba(255, 255, 255, 0.06);
       }
 
       .hero-content,
@@ -473,109 +878,232 @@
         grid-template-columns: 1fr;
       }
 
-      .hero {
-        padding-top: 110px;
-        padding-bottom: 70px;
-      }
-
       .hero-card {
         order: -1;
       }
 
-      .service-grid {
+      .service-grid,
+      .project-grid {
         grid-template-columns: 1fr;
       }
 
       .stats {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+          repeat(2, 1fr);
       }
 
       section {
         padding: 70px 0;
       }
 
-      .section-title h2 {
-        font-size: 32px;
+      .hero h1 {
+        font-size: 50px;
+      }
+
+      .avatar {
+        width: 190px;
+
+        height: 190px;
       }
     }
+
   </style>
 </head>
 
+
 <body>
+
 
   <!-- =========================
        HEADER
-  ========================== -->
+  ========================= -->
+
   <header>
+
     <div class="container navbar">
 
       <a href="#home" class="logo">
-        YOUR BRAND
+        HIẾU CHIMTO
       </a>
 
-      <button class="menu-btn" id="menuBtn">
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Mở menu">
+
         ☰
+
       </button>
 
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Trang chủ</a></li>
-        <li><a href="#about">Giới thiệu</a></li>
-        <li><a href="#services">Dịch vụ</a></li>
-        <li><a href="#stats">Thành tựu</a></li>
-        <li><a href="#contact">Liên hệ</a></li>
+
+      <ul
+        class="nav-links"
+        id="navLinks">
+
+        <li>
+          <a href="#home">
+            Trang chủ
+          </a>
+        </li>
+
+        <li>
+          <a href="#about">
+            Giới thiệu
+          </a>
+        </li>
+
+        <li>
+          <a href="#services">
+            Dịch vụ
+          </a>
+        </li>
+
+        <li>
+          <a href="#projects">
+            Dự án
+          </a>
+        </li>
+
+        <li>
+          <a href="#stats">
+            Thành tựu
+          </a>
+        </li>
+
+        <li>
+          <a href="#contact">
+            Liên hệ
+          </a>
+        </li>
+
       </ul>
 
     </div>
+
   </header>
 
 
   <!-- =========================
-       HERO
-  ========================== -->
-  <section class="hero" id="home">
+       TRANG CHỦ
+  ========================= -->
+
+  <section
+    class="hero"
+    id="home">
 
     <div class="container hero-content">
 
+
       <div>
-        <p style="color:#2563eb;font-weight:700;">
-          CHÀO MỪNG ĐẾN VỚI WEBSITE
-        </p>
+
+        <div class="hero-small">
+
+          👋 XIN CHÀO, MÌNH LÀ
+
+        </div>
+
 
         <h1>
-          Chúng tôi tạo ra
-          <span>những giá trị khác biệt.</span>
+
+          HIẾU
+
+          <span>
+            CHIMTO
+          </span>
+
         </h1>
 
-        <p>
-          Giải pháp chuyên nghiệp, sáng tạo và hiệu quả
-          giúp cá nhân và doanh nghiệp phát triển bền vững.
+
+        <p class="hero-description">
+
+          Chào mừng bạn đến với website cá nhân
+          của mình.
+
+          Đây là nơi mình chia sẻ thông tin,
+          dự án, công việc và những điều mình
+          đang thực hiện.
+
         </p>
 
+
         <div class="buttons">
-          <a href="#about" class="btn btn-primary">
-            Tìm hiểu thêm
+
+          <a
+            href="#about"
+            class="btn btn-primary">
+
+            Tìm hiểu về mình
+
           </a>
 
-          <a href="#contact" class="btn btn-outline">
-            Liên hệ ngay
+
+          <a
+            href="#projects"
+            class="btn btn-outline">
+
+            Xem dự án
+
           </a>
+
         </div>
+
       </div>
+
+
+      <!-- THẺ CÁ NHÂN -->
 
       <div class="hero-card">
 
-        <div class="hero-icon">
-          🚀
-        </div>
 
-        <h3>
-          Sáng tạo & Chuyên nghiệp
-        </h3>
+        <!--
+          Đặt ảnh tên avatar.jpg
+          cùng thư mục với index.html
+        -->
+
+        <img
+          src="avatar.jpg"
+          alt="Ảnh cá nhân HIẾU CHIMTO"
+          class="avatar">
+
+
+        <h2>
+          HIẾU CHIMTO
+        </h2>
+
 
         <p>
-          Đồng hành cùng bạn để biến ý tưởng
-          thành những kết quả thực tế.
+          Sáng tạo • Công nghệ • Phát triển
         </p>
+
+
+        <!-- FACEBOOK + ZALO -->
+
+        <div class="social-buttons">
+
+
+          <a
+            href="https://chat.zalo.me/"
+            class="social zalo"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            Zalo
+
+          </a>
+
+
+          <a
+            href="https://www.facebook.com/le.trung.hieu.636031?locale=vi_VN"
+            class="social facebook"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            Facebook
+
+          </a>
+
+
+        </div>
 
       </div>
 
@@ -585,48 +1113,90 @@
 
 
   <!-- =========================
-       ABOUT
-  ========================== -->
+       GIỚI THIỆU
+  ========================= -->
+
   <section id="about">
 
     <div class="container">
 
+
       <div class="section-title">
-        <h2>Về chúng tôi</h2>
+
+        <h2>
+
+          Về
+          <span>mình</span>
+
+        </h2>
+
         <p>
-          Tìm hiểu thêm về thương hiệu và giá trị chúng tôi theo đuổi.
+          Một chút thông tin về HIẾU CHIMTO
         </p>
+
       </div>
+
 
       <div class="about">
 
-        <div class="about-image">
-          💡
+
+        <div class="about-highlight">
+
+          🚀
+
         </div>
 
-        <div class="about-text">
+
+        <div class="about-box">
+
 
           <h3>
-            Chúng tôi luôn đặt chất lượng lên hàng đầu
+            Xin chào! 👋
           </h3>
 
-          <p>
-            YOUR BRAND là một thương hiệu hướng đến việc
-            cung cấp những sản phẩm và dịch vụ chất lượng,
-            hiện đại và phù hợp với nhu cầu thực tế.
-          </p>
 
           <p>
-            Với đội ngũ giàu kinh nghiệm và tinh thần đổi mới,
-            chúng tôi không ngừng hoàn thiện để mang đến
-            trải nghiệm tốt nhất cho khách hàng.
+
+            Mình là
+
+            <strong>
+              HIẾU CHIMTO
+            </strong>.
+
+            Đây là website cá nhân được xây dựng
+            để giới thiệu bản thân, công việc
+            và các dự án của mình.
+
           </p>
+
+
+          <p>
+
+            Mình yêu thích công nghệ,
+            sáng tạo và luôn muốn học hỏi
+            những điều mới.
+
+          </p>
+
 
           <ul class="check-list">
-            <li>Chất lượng và uy tín</li>
-            <li>Đội ngũ chuyên nghiệp</li>
-            <li>Giải pháp sáng tạo</li>
-            <li>Đồng hành lâu dài</li>
+
+            <li>
+              Đam mê công nghệ
+            </li>
+
+            <li>
+              Luôn học hỏi và phát triển
+            </li>
+
+            <li>
+              Yêu thích sáng tạo
+            </li>
+
+            <li>
+              Quan tâm đến những dự án mới
+            </li>
+
           </ul>
 
         </div>
@@ -639,47 +1209,95 @@
 
 
   <!-- =========================
-       SERVICES
-  ========================== -->
-  <section class="services" id="services">
+       DỊCH VỤ
+  ========================= -->
+
+  <section
+    class="services"
+    id="services">
 
     <div class="container">
 
+
       <div class="section-title">
-        <h2>Dịch vụ của chúng tôi</h2>
+
+        <h2>
+
+          Mình
+          <span>làm gì?</span>
+
+        </h2>
+
         <p>
-          Những giải pháp nổi bật mà chúng tôi cung cấp.
+          Một số lĩnh vực mình quan tâm
         </p>
+
       </div>
+
 
       <div class="service-grid">
 
-        <div class="service-card">
-          <div class="service-icon">💻</div>
-          <h3>Thiết kế Website</h3>
-          <p>
-            Thiết kế website hiện đại, tốc độ cao,
-            tối ưu trên máy tính và điện thoại.
-          </p>
-        </div>
 
         <div class="service-card">
-          <div class="service-icon">🎨</div>
-          <h3>Thiết kế thương hiệu</h3>
+
+          <div class="service-icon">
+            💻
+          </div>
+
+          <h3>
+            Website
+          </h3>
+
           <p>
-            Xây dựng hình ảnh thương hiệu chuyên nghiệp,
-            nhất quán và dễ nhận diện.
+
+            Thiết kế và xây dựng website
+            hiện đại, responsive và dễ sử dụng.
+
           </p>
+
         </div>
 
+
         <div class="service-card">
-          <div class="service-icon">📈</div>
-          <h3>Marketing</h3>
+
+          <div class="service-icon">
+            🤖
+          </div>
+
+          <h3>
+            Công nghệ
+          </h3>
+
           <p>
-            Giải pháp marketing giúp thương hiệu
-            tiếp cận khách hàng và phát triển hiệu quả.
+
+            Tìm hiểu các công nghệ mới,
+            lập trình và tự động hóa.
+
           </p>
+
         </div>
+
+
+        <div class="service-card">
+
+          <div class="service-icon">
+            🎨
+          </div>
+
+          <h3>
+            Sáng tạo
+          </h3>
+
+          <p>
+
+            Tạo ra những ý tưởng mới
+            và biến chúng thành sản phẩm
+            thực tế.
+
+          </p>
+
+        </div>
+
 
       </div>
 
@@ -689,40 +1307,214 @@
 
 
   <!-- =========================
-       STATS
-  ========================== -->
+       DỰ ÁN
+  ========================= -->
+
+  <section
+    class="projects"
+    id="projects">
+
+    <div class="container">
+
+
+      <div class="section-title">
+
+        <h2>
+
+          Dự án
+          <span>của mình</span>
+
+        </h2>
+
+        <p>
+          Một số dự án của HIẾU CHIMTO
+        </p>
+
+      </div>
+
+
+      <div class="project-grid">
+
+
+        <div class="project-card">
+
+          <div class="project-image">
+            🌐
+          </div>
+
+          <div class="project-content">
+
+            <h3>
+              Website cá nhân
+            </h3>
+
+            <p>
+
+              Website giới thiệu cá nhân
+              được xây dựng bằng HTML,
+              CSS và JavaScript.
+
+            </p>
+
+            <a
+              href="#home"
+              class="project-link">
+
+              Xem dự án →
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="project-card">
+
+          <div class="project-image">
+            🤖
+          </div>
+
+          <div class="project-content">
+
+            <h3>
+              Dự án công nghệ
+            </h3>
+
+            <p>
+
+              Một dự án công nghệ đang
+              được phát triển.
+
+            </p>
+
+            <a
+              href="#contact"
+              class="project-link">
+
+              Tìm hiểu thêm →
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="project-card">
+
+          <div class="project-image">
+            🚀
+          </div>
+
+          <div class="project-content">
+
+            <h3>
+              Dự án tương lai
+            </h3>
+
+            <p>
+
+              Khu vực dành cho những
+              dự án mới trong tương lai.
+
+            </p>
+
+            <a
+              href="#contact"
+              class="project-link">
+
+              Liên hệ →
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       THÀNH TỰU
+  ========================= -->
+
   <section id="stats">
 
     <div class="container">
 
+
       <div class="section-title">
-        <h2>Những con số</h2>
-        <p>
-          Một vài dấu mốc trong hành trình phát triển.
-        </p>
+
+        <h2>
+
+          Một vài
+          <span>con số</span>
+
+        </h2>
+
       </div>
+
 
       <div class="stats">
 
-        <div class="stat">
-          <h3 data-target="120">0</h3>
-          <p>Dự án hoàn thành</p>
-        </div>
 
         <div class="stat">
-          <h3 data-target="95">0</h3>
-          <p>Khách hàng hài lòng</p>
+
+          <h3 data-target="10">
+            0
+          </h3>
+
+          <p>
+            Dự án
+          </p>
+
         </div>
 
-        <div class="stat">
-          <h3 data-target="8">0</h3>
-          <p>Năm kinh nghiệm</p>
-        </div>
 
         <div class="stat">
-          <h3 data-target="15">0</h3>
-          <p>Thành viên</p>
+
+          <h3 data-target="5">
+            0
+          </h3>
+
+          <p>
+            Công nghệ
+          </p>
+
         </div>
+
+
+        <div class="stat">
+
+          <h3 data-target="100">
+            0
+          </h3>
+
+          <p>
+            % Nỗ lực
+          </p>
+
+        </div>
+
+
+        <div class="stat">
+
+          <h3 data-target="24">
+            0
+          </h3>
+
+          <p>
+            Giờ sáng tạo
+          </p>
+
+        </div>
+
 
       </div>
 
@@ -732,79 +1524,186 @@
 
 
   <!-- =========================
-       CONTACT
-  ========================== -->
-  <section class="contact" id="contact">
+       LIÊN HỆ
+  ========================= -->
+
+  <section
+    class="contact"
+    id="contact">
 
     <div class="container">
 
+
       <div class="section-title">
-        <h2>Liên hệ với chúng tôi</h2>
+
+        <h2>
+
+          Liên
+          <span>hệ</span>
+
+        </h2>
+
         <p>
-          Hãy để lại thông tin, chúng tôi sẽ liên hệ với bạn.
+
+          Bạn có thể liên hệ với mình
+          qua các kênh bên dưới.
+
         </p>
+
       </div>
+
 
       <div class="contact-grid">
 
+
         <div class="contact-info">
 
-          <div>
-            <h3>📍 Địa chỉ</h3>
-            <p>Hà Nội, Việt Nam</p>
-          </div>
 
           <div>
-            <h3>📞 Điện thoại</h3>
-            <p>0123 456 789</p>
+
+            <h3>
+              👤 Tên
+            </h3>
+
+            <p>
+              HIẾU CHIMTO
+            </p>
+
           </div>
 
-          <div>
-            <h3>✉️ Email</h3>
-            <p>contact@yourbrand.vn</p>
-          </div>
 
           <div>
-            <h3>🌐 Website</h3>
-            <p>www.yourbrand.vn</p>
+
+            <h3>
+              📍 Địa điểm
+            </h3>
+
+            <p>
+              Việt Nam
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <h3>
+              📱 Zalo
+            </h3>
+
+            <p>
+              Liên hệ qua Zalo
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <h3>
+              🌐 Facebook
+            </h3>
+
+            <p>
+              Theo dõi HIẾU CHIMTO trên Facebook
+            </p>
+
+          </div>
+
+
+          <!-- FACEBOOK + ZALO LẦN 2 -->
+
+          <div
+            class="social-buttons"
+            style="justify-content:flex-start;">
+
+
+            <a
+              href="https://chat.zalo.me/"
+              class="social zalo"
+              target="_blank"
+              rel="noopener noreferrer">
+
+              Zalo
+
+            </a>
+
+
+            <a
+              href="https://www.facebook.com/le.trung.hieu.636031?locale=vi_VN"
+              class="social facebook"
+              target="_blank"
+              rel="noopener noreferrer">
+
+              Facebook
+
+            </a>
+
+
           </div>
 
         </div>
 
-        <form class="contact-form" id="contactForm">
+
+        <!-- FORM -->
+
+        <form
+          class="contact-form"
+          id="contactForm">
+
 
           <div class="form-group">
-            <label for="name">Họ và tên</label>
+
+            <label>
+              Họ và tên
+            </label>
+
             <input
               type="text"
               id="name"
               placeholder="Nhập họ tên"
-              required
-            >
+              required>
+
           </div>
 
+
           <div class="form-group">
-            <label for="email">Email</label>
+
+            <label>
+              Email
+            </label>
+
             <input
               type="email"
               id="email"
               placeholder="example@gmail.com"
-              required
-            >
+              required>
+
           </div>
+
 
           <div class="form-group">
-            <label for="message">Nội dung</label>
+
+            <label>
+              Nội dung
+            </label>
+
             <textarea
               id="message"
-              placeholder="Bạn muốn trao đổi điều gì?"
-              required
-            ></textarea>
+              placeholder="Nhập nội dung..."
+              required></textarea>
+
           </div>
 
-          <button type="submit" class="btn btn-primary">
-            Gửi liên hệ
+
+          <button
+            type="submit"
+            class="btn btn-primary">
+
+            Gửi tin nhắn
+
           </button>
+
 
         </form>
 
@@ -816,142 +1715,300 @@
 
 
   <!-- =========================
+       NÚT FACEBOOK + ZALO NỔI
+  ========================= -->
+
+  <div class="floating-social">
+
+
+    <a
+      href="https://chat.zalo.me/"
+      class="zalo"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="Zalo">
+
+      Z
+
+    </a>
+
+
+    <a
+      href="https://www.facebook.com/le.trung.hieu.636031?locale=vi_VN"
+      class="facebook"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="Facebook">
+
+      f
+
+    </a>
+
+
+  </div>
+
+
+  <!-- =========================
        FOOTER
-  ========================== -->
+  ========================= -->
+
   <footer>
 
-    <div class="container">
-      © <span id="year"></span> YOUR BRAND.
-      All Rights Reserved.
-    </div>
+    ©
+
+    <span id="year"></span>
+
+    <strong>
+      HIẾU CHIMTO
+    </strong>
+
+    - All Rights Reserved.
 
   </footer>
 
 
-  <!-- BACK TO TOP -->
-  <button id="topBtn">↑</button>
+  <!-- NÚT LÊN ĐẦU -->
+
+  <button
+    id="topBtn"
+    title="Lên đầu trang">
+
+    ↑
+
+  </button>
 
 
   <!-- =========================
        JAVASCRIPT
-  ========================== -->
+  ========================= -->
+
   <script>
 
-    // Menu mobile
-    const menuBtn = document.getElementById("menuBtn");
-    const navLinks = document.getElementById("navLinks");
 
-    menuBtn.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
+    /* =========================
+       MENU MOBILE
+    ========================= */
 
+    const menuBtn =
+      document.getElementById("menuBtn");
 
-    // Đóng menu khi click link
-    document.querySelectorAll(".nav-links a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-      });
-    });
+    const navLinks =
+      document.getElementById("navLinks");
 
 
-    // Năm hiện tại
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
+    menuBtn.addEventListener(
+      "click",
+      function () {
 
+        navLinks.classList.toggle(
+          "active"
+        );
 
-    // Nút về đầu trang
-    const topBtn = document.getElementById("topBtn");
-
-    window.addEventListener("scroll", () => {
-
-      if (window.scrollY > 400) {
-        topBtn.style.display = "block";
-      } else {
-        topBtn.style.display = "none";
-      }
-
-    });
-
-    topBtn.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    });
-
-
-    // Hiệu ứng đếm số
-    const counters = document.querySelectorAll(".stat h3");
-
-    const observer = new IntersectionObserver(
-      entries => {
-
-        entries.forEach(entry => {
-
-          if (entry.isIntersecting) {
-
-            const counter = entry.target;
-            const target = Number(
-              counter.getAttribute("data-target")
-            );
-
-            let current = 0;
-
-            const updateCounter = () => {
-
-              const increment = Math.ceil(target / 50);
-
-              current += increment;
-
-              if (current >= target) {
-                counter.textContent = target + "+";
-                return;
-              }
-
-              counter.textContent = current;
-
-              requestAnimationFrame(updateCounter);
-            };
-
-            updateCounter();
-
-            observer.unobserve(counter);
-          }
-
-        });
-
-      },
-      {
-        threshold: 0.5
       }
     );
 
-    counters.forEach(counter => {
-      observer.observe(counter);
-    });
+
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(function (link) {
+
+        link.addEventListener(
+          "click",
+          function () {
+
+            navLinks.classList.remove(
+              "active"
+            );
+
+          }
+        );
+
+      });
 
 
-    // Form liên hệ
-    const contactForm =
-      document.getElementById("contactForm");
+    /* =========================
+       NĂM HIỆN TẠI
+    ========================= */
 
-    contactForm.addEventListener("submit", event => {
+    document.getElementById("year")
+      .textContent =
+      new Date().getFullYear();
 
-      event.preventDefault();
 
-      const name =
-        document.getElementById("name").value;
+    /* =========================
+       NÚT LÊN ĐẦU
+    ========================= */
 
-      alert(
-        "Cảm ơn " + name +
-        "! Thông tin của bạn đã được ghi nhận."
+    const topBtn =
+      document.getElementById("topBtn");
+
+
+    window.addEventListener(
+      "scroll",
+      function () {
+
+        if (window.scrollY > 400) {
+
+          topBtn.style.display =
+            "block";
+
+        } else {
+
+          topBtn.style.display =
+            "none";
+
+        }
+
+      }
+    );
+
+
+    topBtn.addEventListener(
+      "click",
+      function () {
+
+        window.scrollTo({
+
+          top: 0,
+
+          behavior: "smooth"
+
+        });
+
+      }
+    );
+
+
+    /* =========================
+       HIỆU ỨNG ĐẾM SỐ
+    ========================= */
+
+    const counters =
+      document.querySelectorAll(
+        ".stat h3"
       );
 
-      contactForm.reset();
 
-    });
+    const observer =
+      new IntersectionObserver(
+        function (entries) {
+
+          entries.forEach(
+            function (entry) {
+
+              if (!entry.isIntersecting) {
+                return;
+              }
+
+
+              const counter =
+                entry.target;
+
+
+              const target =
+                Number(
+                  counter.dataset.target
+                );
+
+
+              let current = 0;
+
+
+              const update =
+                function () {
+
+                  current +=
+                    Math.ceil(
+                      target / 40
+                    );
+
+
+                  if (current >= target) {
+
+                    counter.textContent =
+                      target + "+";
+
+                    return;
+
+                  }
+
+
+                  counter.textContent =
+                    current;
+
+
+                  requestAnimationFrame(
+                    update
+                  );
+
+                };
+
+
+              update();
+
+
+              observer.unobserve(
+                counter
+              );
+
+            }
+          );
+
+        },
+
+        {
+          threshold: 0.5
+        }
+      );
+
+
+    counters.forEach(
+      function (counter) {
+
+        observer.observe(counter);
+
+      }
+    );
+
+
+    /* =========================
+       FORM LIÊN HỆ
+    ========================= */
+
+    const contactForm =
+      document.getElementById(
+        "contactForm"
+      );
+
+
+    contactForm.addEventListener(
+      "submit",
+      function (event) {
+
+        event.preventDefault();
+
+
+        const name =
+          document.getElementById(
+            "name"
+          ).value;
+
+
+        alert(
+          "Cảm ơn " +
+          name +
+          "! Mình đã nhận được thông tin của bạn."
+        );
+
+
+        contactForm.reset();
+
+      }
+    );
+
 
   </script>
 
 </body>
+
 </html>
