@@ -1,23 +1,12 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-    <title>HIẾU CHIMTO | Website cá nhân</title>
-
-    <meta name="description"
-        content="Website cá nhân của HIẾU CHIMTO">
+    <title>TRUNGHIEU RESORT & SPA</title>
 
     <style>
-
-        /* =========================================
-           CÀI ĐẶT CHUNG
-        ========================================= */
-
         * {
             margin: 0;
             padding: 0;
@@ -29,14 +18,9 @@
         }
 
         body {
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
-
-            background: #05070b;
-            color: #ffffff;
-            line-height: 1.6;
+            font-family: Arial, sans-serif;
+            background: #f8f6f1;
+            color: #222;
         }
 
         a {
@@ -50,326 +34,146 @@
         }
 
         .container {
-            width: min(1150px, 92%);
+            width: 90%;
+            max-width: 1200px;
             margin: auto;
         }
-
-
-        /* =========================================
-           THANH MENU
-        ========================================= */
 
         header {
             position: fixed;
             top: 0;
             left: 0;
-
             width: 100%;
-            height: 72px;
-
             z-index: 1000;
-
-            background:
-                rgba(5, 7, 11, 0.92);
-
-            backdrop-filter: blur(15px);
-
-            border-bottom:
-                1px solid
-                rgba(255, 255, 255, 0.08);
+            transition: .3s;
         }
 
-        .navbar {
-            height: 72px;
+        header.scrolled {
+            background: rgba(10, 15, 14, .95);
+        }
 
+        .nav {
+            height: 85px;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
         .logo {
-            font-size: 25px;
-            font-weight: 900;
-            letter-spacing: 1px;
+            color: white;
+            font-family: Georgia, serif;
+            font-size: 27px;
+            letter-spacing: 2px;
+        }
 
-            color: #159cff;
+        .logo span {
+            display: block;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 9px;
+            letter-spacing: 4px;
+            color: #d5b36a;
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
-
+            gap: 28px;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
-            color: #dce4ed;
-
-            font-weight: 600;
-
-            transition: 0.3s;
+            color: white;
+            font-size: 14px;
         }
 
         .nav-links a:hover {
-            color: #159cff;
+            color: #d5b36a;
+        }
+
+        .booking-btn {
+            border: 1px solid #d5b36a;
+            padding: 11px 18px;
+            color: #d5b36a !important;
         }
 
         .menu-btn {
             display: none;
-
+            border: 0;
             background: none;
-            border: none;
-
             color: white;
-
-            font-size: 30px;
-
-            cursor: pointer;
+            font-size: 28px;
         }
 
-
-        /* =========================================
-           HERO
-        ========================================= */
-
         .hero {
-            min-height: 100vh;
-
-            padding-top: 72px;
-
+            height: 100vh;
+            min-height: 680px;
             display: flex;
             align-items: center;
-
+            position: relative;
             background:
-                radial-gradient(
-                    circle at 80% 20%,
-                    rgba(0, 145, 255, 0.25),
-                    transparent 35%
-                ),
-
-                radial-gradient(
-                    circle at 20% 80%,
-                    rgba(0, 90, 255, 0.12),
-                    transparent 35%
-                ),
-
-                #05070b;
+                linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.35)),
+                url("https://images.unsplash.com/photo-1602002418082-a4443e081dd1?auto=format&fit=crop&w=2000&q=90")
+                center/cover no-repeat;
         }
 
         .hero-content {
-            display: grid;
-
-            grid-template-columns:
-                1.1fr 0.9fr;
-
-            gap: 70px;
-
-            align-items: center;
+            color: white;
+            max-width: 750px;
+            padding-top: 70px;
         }
 
         .hero-small {
-            color: #159cff;
-
-            font-size: 17px;
-
-            font-weight: 800;
-
-            margin-bottom: 18px;
-
-            letter-spacing: 1px;
+            color: #e1c276;
+            letter-spacing: 5px;
+            font-size: 13px;
+            margin-bottom: 20px;
         }
 
         .hero h1 {
-            font-size:
-                clamp(48px, 7vw, 82px);
-
-            line-height: 0.98;
-
-            margin-bottom: 28px;
+            font-family: Georgia, serif;
+            font-size: clamp(55px, 8vw, 100px);
+            line-height: 1;
+            font-weight: 400;
+            margin-bottom: 25px;
         }
 
-        .hero h1 span {
-            color: #159cff;
+        .hero p {
+            max-width: 650px;
+            font-size: 18px;
+            margin-bottom: 35px;
         }
 
-        .hero-description {
-            color: #aeb9c7;
-
-            font-size: 19px;
-
-            max-width: 620px;
-
-            margin-bottom: 32px;
-        }
-
-
-        /* =========================================
-           NÚT
-        ========================================= */
-
-        .buttons {
+        .hero-buttons {
             display: flex;
-
-            gap: 14px;
-
+            gap: 15px;
             flex-wrap: wrap;
         }
 
         .btn {
-            display: inline-flex;
-
-            align-items: center;
-            justify-content: center;
-
-            padding: 14px 25px;
-
-            border-radius: 10px;
-
-            font-weight: 700;
-
-            transition: 0.3s;
-
-            cursor: pointer;
+            display: inline-block;
+            padding: 14px 28px;
+            border: 1px solid #d5b36a;
+            transition: .3s;
         }
 
-        .btn-primary {
-            background: #0799f5;
-
-            color: white;
-
-            box-shadow:
-                0 10px 30px
-                rgba(0, 153, 255, 0.25);
+        .btn-gold {
+            background: #d5b36a;
+            color: #111;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-
-            background: #0085d8;
+        .btn-gold:hover {
+            background: #efd58e;
         }
 
         .btn-outline {
-            border:
-                1px solid
-                #0799f5;
-
-            color: #0799f5;
+            color: white;
         }
 
         .btn-outline:hover {
-            background: #0799f5;
-            color: white;
+            background: white;
+            color: #111;
         }
-
-
-        /* =========================================
-           THẺ CÁ NHÂN
-        ========================================= */
-
-        .hero-card {
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(18, 25, 35, 0.95),
-                    rgba(7, 11, 17, 0.95)
-                );
-
-            border:
-                1px solid
-                rgba(0, 157, 255, 0.25);
-
-            border-radius: 30px;
-
-            padding: 40px;
-
-            text-align: center;
-
-            box-shadow:
-                0 30px 80px
-                rgba(0, 0, 0, 0.45);
-        }
-
-        .avatar {
-            width: 230px;
-            height: 230px;
-
-            margin:
-                auto auto 25px;
-
-            border-radius: 50%;
-
-            object-fit: cover;
-
-            border:
-                5px solid
-                #0799f5;
-
-            box-shadow:
-                0 0 50px
-                rgba(0, 153, 255, 0.25);
-
-            background: #111923;
-        }
-
-        .hero-card h2 {
-            font-size: 30px;
-            margin-bottom: 8px;
-        }
-
-        .hero-card p {
-            color: #9da9b7;
-        }
-
-
-        /* =========================================
-           FACEBOOK + ZALO
-        ========================================= */
-
-        .social-buttons {
-            display: flex;
-
-            justify-content: center;
-
-            gap: 12px;
-
-            margin-top: 25px;
-
-            flex-wrap: wrap;
-        }
-
-        .social {
-            padding:
-                11px 20px;
-
-            border-radius: 9px;
-
-            font-weight: 700;
-
-            transition: 0.3s;
-        }
-
-        .zalo {
-            background: #087eff;
-            color: white;
-        }
-
-        .facebook {
-            background: #1877f2;
-            color: white;
-        }
-
-        .social:hover {
-            transform:
-                translateY(-3px);
-
-            filter:
-                brightness(1.15);
-        }
-
-
-        /* =========================================
-           SECTION
-        ========================================= */
 
         section {
             padding: 100px 0;
@@ -377,1803 +181,1293 @@
 
         .section-title {
             text-align: center;
+            max-width: 750px;
+            margin: 0 auto 60px;
+        }
 
-            margin-bottom: 55px;
+        .section-title small {
+            color: #b18a40;
+            letter-spacing: 4px;
+            text-transform: uppercase;
         }
 
         .section-title h2 {
-            font-size: 42px;
-
-            margin-bottom: 12px;
-        }
-
-        .section-title h2 span {
-            color: #0799f5;
+            font-family: Georgia, serif;
+            font-size: clamp(38px,5vw,60px);
+            font-weight: 400;
+            margin: 15px 0;
         }
 
         .section-title p {
-            color: #8e9aaa;
+            color: #777;
         }
 
-
-        /* =========================================
-           GIỚI THIỆU
-        ========================================= */
-
-        #about {
-            background: #05070b;
-        }
-
-        .about {
+        .about-grid {
             display: grid;
-
-            grid-template-columns:
-                1fr 1fr;
-
-            gap: 60px;
-
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
             align-items: center;
         }
 
-        .about-highlight {
-            min-height: 400px;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 25px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #071a2a,
-                    #062d47
-                );
-
-            border:
-                1px solid
-                rgba(0, 157, 255, 0.2);
-
-            font-size: 120px;
-
-            box-shadow:
-                0 25px 70px
-                rgba(0, 120, 255, 0.12);
+        .about-image img {
+            height: 560px;
+            width: 100%;
+            object-fit: cover;
         }
 
-        .about-box {
-            background: #0c1118;
-
-            border:
-                1px solid
-                rgba(255, 255, 255, 0.07);
-
-            border-radius: 20px;
-
-            padding: 35px;
+        .about-text small {
+            color: #b18a40;
+            letter-spacing: 3px;
         }
 
-        .about-box h3 {
-            font-size: 29px;
-
-            margin-bottom: 20px;
+        .about-text h2 {
+            font-family: Georgia, serif;
+            font-size: 48px;
+            line-height: 1.15;
+            font-weight: 400;
+            margin: 15px 0 25px;
         }
 
-        .about-box p {
-            color: #a5b0bd;
-
-            margin-bottom: 17px;
-        }
-
-        .check-list {
-            list-style: none;
-
-            margin-top: 25px;
-        }
-
-        .check-list li {
-            margin: 13px 0;
-
-            font-weight: 600;
-        }
-
-        .check-list li::before {
-            content: "✓";
-
-            color: #0799f5;
-
-            margin-right: 10px;
-
-            font-weight: bold;
-        }
-
-
-        /* =========================================
-           DỊCH VỤ
-        ========================================= */
-
-        .services {
-            background: #080c12;
-        }
-
-        .service-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 22px;
-        }
-
-        .service-card {
-            padding: 32px;
-
-            background: #0d131b;
-
-            border:
-                1px solid
-                rgba(255, 255, 255, 0.07);
-
-            border-radius: 18px;
-
-            transition: 0.3s;
-        }
-
-        .service-card:hover {
-            transform:
-                translateY(-7px);
-
-            border-color:
-                rgba(0, 157, 255, 0.5);
-
-            box-shadow:
-                0 20px 50px
-                rgba(0, 0, 0, 0.3);
-        }
-
-        .service-icon {
-            font-size: 40px;
-
+        .about-text p {
+            color: #666;
             margin-bottom: 18px;
         }
 
-        .service-card h3 {
+        .signature {
+            margin-top: 30px;
+            font-family: Georgia, serif;
+            font-size: 24px;
+            color: #a17b37;
+        }
+
+        .rooms {
+            background: #111716;
+            color: white;
+        }
+
+        .rooms .section-title p {
+            color: #aaa;
+        }
+
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 25px;
+        }
+
+        .room-card {
+            background: #1a201f;
+            overflow: hidden;
+            transition: .4s;
+        }
+
+        .room-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .room-image {
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .room-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .room-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .room-info {
+            padding: 28px;
+        }
+
+        .room-info h3 {
+            font-family: Georgia, serif;
+            font-size: 28px;
             margin-bottom: 10px;
         }
 
-        .service-card p {
-            color: #8f9aaa;
+        .room-info p {
+            color: #aaa;
+            font-size: 14px;
+            margin-bottom: 20px;
         }
 
-
-        /* =========================================
-           DỰ ÁN
-        ========================================= */
-
-        .projects {
-            background: #05070b;
-        }
-
-        .project-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 22px;
-        }
-
-        .project-card {
-            overflow: hidden;
-
-            background: #0d131b;
-
-            border:
-                1px solid
-                rgba(255, 255, 255, 0.07);
-
-            border-radius: 18px;
-
-            transition: 0.3s;
-        }
-
-        .project-card:hover {
-            transform:
-                translateY(-8px);
-
-            border-color:
-                rgba(0, 157, 255, 0.45);
-
-            box-shadow:
-                0 20px 50px
-                rgba(0, 0, 0, 0.3);
-        }
-
-        .project-image {
-            height: 190px;
-
+        .room-meta {
             display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            font-size: 65px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #071b2b,
-                    #063d63
-                );
+            gap: 18px;
+            color: #c9a45c;
+            font-size: 13px;
+            margin-bottom: 22px;
+            flex-wrap: wrap;
         }
 
-        .project-content {
-            padding: 25px;
+        .room-link {
+            color: #d5b36a;
+            font-size: 13px;
         }
 
-        .project-content h3 {
+        .facilities {
+            background: white;
+        }
+
+        .facility-grid {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+        }
+
+        .facility {
+            text-align: center;
+            padding: 35px 20px;
+            border: 1px solid #e7e2d8;
+            transition: .3s;
+        }
+
+        .facility:hover {
+            transform: translateY(-7px);
+            border-color: #d5b36a;
+        }
+
+        .facility-icon {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .facility h3 {
+            font-family: Georgia, serif;
+            font-size: 22px;
             margin-bottom: 8px;
         }
 
-        .project-content p {
-            color: #8f9aaa;
-
-            margin-bottom: 18px;
+        .facility p {
+            color: #777;
+            font-size: 14px;
         }
 
-        .project-link {
-            color: #0799f5;
-
-            font-weight: 700;
+        .experience {
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+                url("https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=2000&q=90")
+                center/cover no-repeat;
         }
 
-
-        /* =========================================
-           THÀNH TỰU
-        ========================================= */
-
-        #stats {
-            background: #080c12;
+        .experience-content {
+            max-width: 650px;
+            color: white;
         }
 
-        .stats {
+        .experience-content small {
+            color: #e0c278;
+            letter-spacing: 4px;
+        }
+
+        .experience-content h2 {
+            font-family: Georgia, serif;
+            font-size: clamp(45px,6vw,70px);
+            line-height: 1.1;
+            font-weight: 400;
+            margin: 18px 0;
+        }
+
+        .experience-content p {
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .gallery {
+            background: #f8f6f1;
+        }
+
+        .gallery-grid {
             display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-auto-rows: 230px;
+            gap: 12px;
+        }
 
-            grid-template-columns:
-                repeat(4, 1fr);
+        .gallery-item {
+            overflow: hidden;
+        }
 
+        .gallery-item:first-child {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .gallery-item:nth-child(4) {
+            grid-column: span 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .booking {
+            background: #111716;
+            color: white;
+        }
+
+        .booking-box {
+            background: #1b211f;
+            padding: 55px;
+            max-width: 950px;
+            margin: auto;
+            border: 1px solid #353b38;
+        }
+
+        .booking-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
-
-            text-align: center;
         }
 
-        .stat {
-            padding: 25px;
-
-            background: #0d131b;
-
-            border:
-                1px solid
-                rgba(255, 255, 255, 0.06);
-
-            border-radius: 18px;
+        .form-group {
+            display: flex;
+            flex-direction: column;
         }
 
-        .stat h3 {
-            color: #0799f5;
-
-            font-size: 45px;
+        .form-group.full {
+            grid-column: span 2;
         }
 
-        .stat p {
-            color: #8f9aaa;
+        .form-group label {
+            font-size: 13px;
+            color: #bbb;
+            margin-bottom: 7px;
         }
 
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            background: #111716;
+            border: 1px solid #3b403e;
+            color: white;
+            padding: 13px;
+            outline: none;
+        }
 
-        /* =========================================
-           LIÊN HỆ
-        ========================================= */
+        .form-group textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
 
         .contact {
-            background: #080c12;
+            background: #f8f6f1;
         }
 
         .contact-grid {
             display: grid;
-
-            grid-template-columns:
-                1fr 1fr;
-
+            grid-template-columns: 1fr 1fr;
             gap: 50px;
         }
 
-        .contact-info {
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 22px;
-        }
-
-        .contact-info > div:not(.social-buttons) {
-            padding: 22px;
-
-            background: #0d131b;
-
-            border:
-                1px solid
-                rgba(255, 255, 255, 0.07);
-
-            border-radius: 15px;
-        }
-
-        .contact-info h3 {
-            margin-bottom: 6px;
+        .contact-info h2 {
+            font-family: Georgia, serif;
+            font-size: 48px;
+            line-height: 1.15;
+            font-weight: 400;
+            margin: 15px 0 25px;
         }
 
         .contact-info p {
-            color: #8f9aaa;
+            color: #666;
+            margin-bottom: 25px;
         }
 
-        .contact-form {
-            background: #0d131b;
-
-            border:
-                1px solid
-                rgba(255, 255, 255, 0.07);
-
-            border-radius: 20px;
-
-            padding: 30px;
+        .contact-detail {
+            margin: 18px 0;
         }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
+        .contact-detail strong {
             display: block;
-
-            margin-bottom: 8px;
-
-            font-weight: 700;
         }
 
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+        }
 
-            padding: 14px 16px;
+        .social-btn {
+            padding: 12px 22px;
+            border: 1px solid #ddd;
+            transition: .3s;
+            font-weight: 600;
+        }
 
-            border:
-                1px solid
-                rgba(255, 255, 255, 0.1);
-
-            border-radius: 10px;
-
-            background: #080c12;
-
+        .social-btn.facebook:hover {
+            background: #1877f2;
             color: white;
-
-            outline: none;
-
-            font-size: 15px;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: #0799f5;
-
-            box-shadow:
-                0 0 0 3px
-                rgba(7, 153, 245, 0.1);
+        .social-btn.zalo:hover {
+            background: #087eff;
+            color: white;
         }
 
-        .form-group textarea {
-            min-height: 150px;
-
-            resize: vertical;
-        }
-
-        .contact-form .btn {
-            width: 100%;
-
-            border: none;
-        }
-
-
-        /* =========================================
-           NÚT FACEBOOK + ZALO NỔI
-        ========================================= */
-
-        .floating-social {
-            position: fixed;
-
-            right: 20px;
-            bottom: 25px;
-
-            z-index: 999;
-
+        .contact-card {
+            background: #111716;
+            color: white;
+            padding: 45px;
+            min-height: 360px;
             display: flex;
-
             flex-direction: column;
-
-            gap: 10px;
-        }
-
-        .floating-social a {
-            width: 50px;
-            height: 50px;
-
-            display: flex;
-
-            align-items: center;
             justify-content: center;
-
-            border-radius: 50%;
-
-            font-weight: 900;
-
-            font-size: 20px;
-
-            box-shadow:
-                0 10px 30px
-                rgba(0, 0, 0, 0.35);
-
-            transition: 0.3s;
         }
 
-        .floating-social a:hover {
-            transform:
-                scale(1.1);
+        .contact-card h3 {
+            font-family: Georgia, serif;
+            font-size: 34px;
+            margin-bottom: 15px;
         }
 
-
-        /* =========================================
-           FOOTER
-        ========================================= */
+        .contact-card p {
+            color: #aaa;
+        }
 
         footer {
-            padding: 30px 20px;
-
-            text-align: center;
-
-            background: #030508;
-
-            color: #788493;
-
-            border-top:
-                1px solid
-                rgba(255, 255, 255, 0.06);
-        }
-
-        footer strong {
-            color: #0799f5;
-        }
-
-
-        /* =========================================
-           NÚT LÊN ĐẦU
-        ========================================= */
-
-        #topBtn {
-            position: fixed;
-
-            right: 20px;
-            bottom: 145px;
-
-            width: 45px;
-            height: 45px;
-
-            display: none;
-
-            border: none;
-
-            border-radius: 50%;
-
-            background: #0799f5;
-
+            background: #0b0e0d;
             color: white;
-
-            font-size: 22px;
-
-            cursor: pointer;
-
-            z-index: 998;
-
-            box-shadow:
-                0 10px 30px
-                rgba(0, 153, 255, 0.3);
+            padding: 50px 0 25px;
         }
 
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #292d2c;
+        }
 
-        /* =========================================
-           RESPONSIVE
-        ========================================= */
+        footer h3 {
+            font-family: Georgia, serif;
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
 
-        @media (max-width: 900px) {
+        footer p,
+        footer li {
+            color: #999;
+        }
 
-            .hero-content {
-                grid-template-columns: 1fr;
+        footer h4 {
+            color: #d5b36a;
+            margin-bottom: 15px;
+        }
 
-                gap: 45px;
-            }
+        footer ul {
+            list-style: none;
+        }
 
-            .hero {
-                padding-top: 120px;
+        footer li {
+            margin-bottom: 8px;
+        }
 
-                padding-bottom: 80px;
-            }
+        footer a:hover {
+            color: #d5b36a;
+        }
 
-            .hero-card {
-                max-width: 600px;
+        .copyright {
+            text-align: center;
+            color: #777;
+            font-size: 13px;
+            padding-top: 25px;
+        }
 
-                margin: auto;
-            }
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: .8s ease;
+        }
 
-            .about {
-                grid-template-columns: 1fr;
-            }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-            .service-grid {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-            .project-grid {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-            .stats {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
+        @media (max-width:900px) {
 
             .menu-btn {
                 display: block;
+                cursor: pointer;
             }
 
             .nav-links {
                 position: absolute;
-
-                top: 72px;
+                top: 85px;
                 left: 0;
-
                 width: 100%;
-
+                background: rgba(15,18,18,.98);
                 display: none;
-
                 flex-direction: column;
-
-                gap: 0;
-
-                background: #080c12;
-
-                border-bottom:
-                    1px solid
-                    rgba(255, 255, 255, 0.08);
+                padding: 25px;
+                gap: 20px;
             }
 
             .nav-links.active {
                 display: flex;
             }
 
-            .nav-links li {
-                width: 100%;
-            }
-
-            .nav-links a {
-                display: block;
-
-                padding: 16px 5%;
-
-                border-bottom:
-                    1px solid
-                    rgba(255, 255, 255, 0.05);
-            }
-        }
-
-
-        @media (max-width: 600px) {
-
-            .logo {
-                font-size: 20px;
-            }
-
-            .hero h1 {
-                font-size: 50px;
-            }
-
-            .hero-description {
-                font-size: 17px;
-            }
-
-            .avatar {
-                width: 180px;
-                height: 180px;
-            }
-
-            .hero-card {
-                padding: 25px;
-            }
-
-            section {
-                padding: 75px 0;
-            }
-
-            .section-title h2 {
-                font-size: 34px;
-            }
-
-            .service-grid {
+            .about-grid,
+            .contact-grid {
                 grid-template-columns: 1fr;
             }
 
-            .project-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats {
+            .rooms-grid {
                 grid-template-columns: 1fr 1fr;
             }
 
-            .stat h3 {
-                font-size: 35px;
+            .facility-grid {
+                grid-template-columns: 1fr 1fr;
             }
 
-            .about-highlight {
-                min-height: 280px;
-
-                font-size: 90px;
-            }
-
-            .floating-social {
-                right: 12px;
-                bottom: 15px;
-            }
-
-            #topBtn {
-                right: 12px;
-                bottom: 135px;
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
             }
         }
 
+        @media (max-width:600px) {
+
+            section {
+                padding: 70px 0;
+            }
+
+            .hero h1 {
+                font-size: 55px;
+            }
+
+            .about-image img {
+                height: 400px;
+            }
+
+            .about-text h2,
+            .contact-info h2 {
+                font-size: 38px;
+            }
+
+            .rooms-grid,
+            .facility-grid,
+            .gallery-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-auto-rows: 250px;
+            }
+
+            .gallery-item:first-child,
+            .gallery-item:nth-child(4) {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .booking-box {
+                padding: 30px 20px;
+            }
+
+            .booking-form {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: span 1;
+            }
+        }
     </style>
 </head>
 
-
 <body>
 
+<header id="header">
+    <div class="container nav">
 
-    <!-- =========================================
-         HEADER
-    ========================================= -->
+        <a href="#home" class="logo">
+            TRUNGHIEU
+            <span>RESORT & SPA</span>
+        </a>
 
-    <header>
+        <button class="menu-btn" id="menuBtn">☰</button>
 
-        <div class="container navbar">
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Trang chủ</a></li>
+            <li><a href="#about">Về resort</a></li>
+            <li><a href="#rooms">Phòng & Villa</a></li>
+            <li><a href="#facilities">Tiện ích</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Liên hệ</a></li>
+            <li>
+                <a href="#booking" class="booking-btn">ĐẶT PHÒNG</a>
+            </li>
+        </ul>
 
-            <a href="#home" class="logo">
-                HIẾU CHIMTO
-            </a>
+    </div>
+</header>
 
-            <button
-                class="menu-btn"
-                id="menuBtn"
-                aria-label="Mở menu">
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content reveal">
 
-                ☰
+            <div class="hero-small">
+                Luxury 5-Star Resort
+            </div>
 
-            </button>
+            <h1>
+                Escape<br>
+                To Paradise.
+            </h1>
 
-            <ul class="nav-links" id="navLinks">
+            <p>
+                Một hành trình nghỉ dưỡng đẳng cấp,
+                nơi thiên nhiên, sự riêng tư và dịch vụ
+                5 sao hòa quyện thành một trải nghiệm đáng nhớ.
+            </p>
 
-                <li>
-                    <a href="#home">
-                        Trang chủ
-                    </a>
-                </li>
+            <div class="hero-buttons">
+                <a href="#rooms" class="btn btn-gold">
+                    KHÁM PHÁ PHÒNG
+                </a>
 
-                <li>
-                    <a href="#about">
-                        Giới thiệu
-                    </a>
-                </li>
+                <a href="#booking" class="btn btn-outline">
+                    ĐẶT PHÒNG NGAY
+                </a>
+            </div>
 
-                <li>
-                    <a href="#services">
-                        Dịch vụ
-                    </a>
-                </li>
+        </div>
+    </div>
+</section>
 
-                <li>
-                    <a href="#projects">
-                        Dự án
-                    </a>
-                </li>
+<section class="about" id="about">
+    <div class="container about-grid">
 
-                <li>
-                    <a href="#stats">
-                        Thành tựu
-                    </a>
-                </li>
+        <div class="about-image reveal">
+            <img
+                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85"
+                alt="TRUNGHIEU Resort"
+            >
+        </div>
 
-                <li>
-                    <a href="#contact">
-                        Liên hệ
-                    </a>
-                </li>
+        <div class="about-text reveal">
 
-            </ul>
+            <small>Discover TRUNGHIEU</small>
+
+            <h2>
+                Nơi kỳ nghỉ trở thành một trải nghiệm đáng nhớ.
+            </h2>
+
+            <p>
+                TRUNGHIEU Resort & Spa mang đến một không gian
+                nghỉ dưỡng tinh tế, nơi du khách có thể tạm
+                rời xa nhịp sống bận rộn và tận hưởng từng
+                khoảnh khắc bình yên.
+            </p>
+
+            <p>
+                Từ những căn villa riêng tư, hồ bơi vô cực,
+                ẩm thực cao cấp đến dịch vụ spa chuyên nghiệp,
+                mọi chi tiết đều được chăm chút để tạo nên
+                trải nghiệm nghỉ dưỡng chuẩn 5 sao.
+            </p>
+
+            <div class="signature">
+                TRUNGHIEU Hospitality
+            </div>
 
         </div>
 
-    </header>
+    </div>
+</section>
 
+<section class="rooms" id="rooms">
 
-    <!-- =========================================
-         HERO
-    ========================================= -->
+    <div class="container">
 
-    <section class="hero" id="home">
+        <div class="section-title reveal">
 
-        <div class="container">
+            <small>Stay With Us</small>
 
-            <div class="hero-content">
+            <h2>Phòng & Villa</h2>
 
+            <p>
+                Những không gian nghỉ dưỡng được thiết kế
+                để mang đến sự riêng tư, thoải mái và sang trọng.
+            </p>
 
-                <div>
+        </div>
 
-                    <div class="hero-small">
+        <div class="rooms-grid">
 
-                        👋 XIN CHÀO, MÌNH LÀ
+            <div class="room-card reveal">
 
-                    </div>
-
-
-                    <h1>
-
-                        HIẾU
-
-                        <span>
-                            CHIMTO
-                        </span>
-
-                    </h1>
-
-
-                    <p class="hero-description">
-
-                        Chào mừng bạn đến với website
-                        cá nhân của mình.
-
-                        <br>
-
-                        Đây là nơi mình chia sẻ
-                        thông tin, dự án, công việc
-                        và những điều mình đang thực hiện.
-
-                    </p>
-
-
-                    <div class="buttons">
-
-                        <a
-                            href="#about"
-                            class="btn btn-primary">
-
-                            Tìm hiểu về mình
-
-                        </a>
-
-
-                        <a
-                            href="#projects"
-                            class="btn btn-outline">
-
-                            Xem dự án
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <!-- THẺ CÁ NHÂN -->
-
-                <div class="hero-card">
-
-                    <!--
-                        ĐẶT ẢNH CÁ NHÂN:
-                        avatar.jpg
-
-                        cùng thư mục với index.html
-                    -->
-
+                <div class="room-image">
                     <img
-                        src="avatar.jpg"
-                        alt="Ảnh cá nhân HIẾU CHIMTO"
-                        class="avatar"
-                        onerror="this.src='https://via.placeholder.com/230x230/0799f5/ffffff?text=HIẾU+CHIMTO';">
+                        src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1000&q=85"
+                        alt="Deluxe Ocean Room"
+                    >
+                </div>
 
+                <div class="room-info">
 
-                    <h2>
-                        HIẾU CHIMTO
-                    </h2>
-
+                    <h3>Deluxe Ocean Room</h3>
 
                     <p>
-                        Sáng tạo • Công nghệ • Phát triển
+                        Không gian thanh lịch với tầm nhìn
+                        hướng biển tuyệt đẹp.
                     </p>
 
-
-                    <!-- FACEBOOK + ZALO -->
-
-                    <div class="social-buttons">
-
-                        <a
-                            href="https://chat.zalo.me/"
-                            class="social zalo"
-                            target="_blank"
-                            rel="noopener noreferrer">
-
-                            Zalo
-
-                        </a>
-
-
-                        <a
-                            href="https://www.facebook.com/le.trung.hieu.636031?locale=vi_VN"
-                            class="social facebook"
-                            target="_blank"
-                            rel="noopener noreferrer">
-
-                            Facebook
-
-                        </a>
-
+                    <div class="room-meta">
+                        <span>45 m²</span>
+                        <span>2 khách</span>
+                        <span>Ocean View</span>
                     </div>
+
+                    <a href="#booking" class="room-link">
+                        KHÁM PHÁ PHÒNG →
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="room-card reveal">
+
+                <div class="room-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=1000&q=85"
+                        alt="Private Pool Villa"
+                    >
+                </div>
+
+                <div class="room-info">
+
+                    <h3>Private Pool Villa</h3>
+
+                    <p>
+                        Villa riêng tư với hồ bơi cá nhân
+                        và không gian thư giãn tuyệt đối.
+                    </p>
+
+                    <div class="room-meta">
+                        <span>120 m²</span>
+                        <span>4 khách</span>
+                        <span>Private Pool</span>
+                    </div>
+
+                    <a href="#booking" class="room-link">
+                        KHÁM PHÁ VILLA →
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="room-card reveal">
+
+                <div class="room-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=85"
+                        alt="Presidential Villa"
+                    >
+                </div>
+
+                <div class="room-info">
+
+                    <h3>Presidential Villa</h3>
+
+                    <p>
+                        Không gian nghỉ dưỡng đẳng cấp dành
+                        cho những trải nghiệm đặc biệt.
+                    </p>
+
+                    <div class="room-meta">
+                        <span>250 m²</span>
+                        <span>6 khách</span>
+                        <span>Butler Service</span>
+                    </div>
+
+                    <a href="#booking" class="room-link">
+                        KHÁM PHÁ VILLA →
+                    </a>
 
                 </div>
 
             </div>
 
         </div>
-
-    </section>
-
-
-    <!-- =========================================
-         GIỚI THIỆU
-    ========================================= -->
-
-    <section id="about">
-
-        <div class="container">
-
-
-            <div class="section-title">
-
-                <h2>
-
-                    Về
-                    <span>
-                        mình
-                    </span>
-
-                </h2>
-
-                <p>
-                    Một chút thông tin về HIẾU CHIMTO
-                </p>
-
-            </div>
-
-
-            <div class="about">
-
-
-                <div class="about-highlight">
-
-                    🚀
-
-                </div>
-
-
-                <div class="about-box">
-
-                    <h3>
-                        Xin chào! 👋
-                    </h3>
-
-
-                    <p>
-
-                        Mình là
-                        <strong>
-                            HIẾU CHIMTO
-                        </strong>.
-
-                        Đây là website cá nhân
-                        được xây dựng để giới thiệu
-                        bản thân, công việc và
-                        các dự án của mình.
-
-                    </p>
-
-
-                    <p>
-
-                        Mình yêu thích công nghệ,
-                        sáng tạo và luôn muốn học hỏi
-                        những điều mới.
-
-                    </p>
-
-
-                    <ul class="check-list">
-
-                        <li>
-                            Đam mê công nghệ
-                        </li>
-
-                        <li>
-                            Luôn học hỏi và phát triển
-                        </li>
-
-                        <li>
-                            Yêu thích sáng tạo
-                        </li>
-
-                        <li>
-                            Quan tâm đến những dự án mới
-                        </li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================================
-         DỊCH VỤ
-    ========================================= -->
-
-    <section
-        class="services"
-        id="services">
-
-        <div class="container">
-
-
-            <div class="section-title">
-
-                <h2>
-
-                    Mình
-                    <span>
-                        làm gì?
-                    </span>
-
-                </h2>
-
-                <p>
-                    Một số lĩnh vực mình quan tâm
-                </p>
-
-            </div>
-
-
-            <div class="service-grid">
-
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        💻
-                    </div>
-
-                    <h3>
-                        Website
-                    </h3>
-
-                    <p>
-
-                        Thiết kế và xây dựng website
-                        hiện đại, responsive và
-                        dễ sử dụng.
-
-                    </p>
-
-                </div>
-
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        🤖
-                    </div>
-
-                    <h3>
-                        Công nghệ
-                    </h3>
-
-                    <p>
-
-                        Tìm hiểu các công nghệ mới,
-                        lập trình và tự động hóa.
-
-                    </p>
-
-                </div>
-
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        🎨
-                    </div>
-
-                    <h3>
-                        Sáng tạo
-                    </h3>
-
-                    <p>
-
-                        Tạo ra những ý tưởng mới
-                        và biến chúng thành
-                        sản phẩm thực tế.
-
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================================
-         DỰ ÁN
-    ========================================= -->
-
-    <section
-        class="projects"
-        id="projects">
-
-        <div class="container">
-
-
-            <div class="section-title">
-
-                <h2>
-
-                    Dự án
-                    <span>
-                        của mình
-                    </span>
-
-                </h2>
-
-                <p>
-                    Một số dự án của HIẾU CHIMTO
-                </p>
-
-            </div>
-
-
-            <div class="project-grid">
-
-
-                <div class="project-card">
-
-                    <div class="project-image">
-                        🌐
-                    </div>
-
-                    <div class="project-content">
-
-                        <h3>
-                            Website cá nhân
-                        </h3>
-
-                        <p>
-
-                            Website giới thiệu cá nhân
-                            được xây dựng bằng HTML,
-                            CSS và JavaScript.
-
-                        </p>
-
-                        <a
-                            href="#home"
-                            class="project-link">
-
-                            Xem dự án →
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <div class="project-card">
-
-                    <div class="project-image">
-                        🤖
-                    </div>
-
-                    <div class="project-content">
-
-                        <h3>
-                            Dự án công nghệ
-                        </h3>
-
-                        <p>
-
-                            Một dự án công nghệ đang
-                            được phát triển.
-
-                        </p>
-
-                        <a
-                            href="#contact"
-                            class="project-link">
-
-                            Tìm hiểu thêm →
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <div class="project-card">
-
-                    <div class="project-image">
-                        🚀
-                    </div>
-
-                    <div class="project-content">
-
-                        <h3>
-                            Dự án tương lai
-                        </h3>
-
-                        <p>
-
-                            Khu vực dành cho những
-                            dự án mới trong tương lai.
-
-                        </p>
-
-                        <a
-                            href="#contact"
-                            class="project-link">
-
-                            Liên hệ →
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================================
-         THÀNH TỰU
-    ========================================= -->
-
-    <section id="stats">
-
-        <div class="container">
-
-
-            <div class="section-title">
-
-                <h2>
-
-                    Một vài
-                    <span>
-                        con số
-                    </span>
-
-                </h2>
-
-                <p>
-                    Những con số có thể thay đổi
-                    theo quá trình phát triển.
-                </p>
-
-            </div>
-
-
-            <div class="stats">
-
-
-                <div class="stat">
-
-                    <h3 data-target="10">
-                        0
-                    </h3>
-
-                    <p>
-                        Dự án
-                    </p>
-
-                </div>
-
-
-                <div class="stat">
-
-                    <h3 data-target="5">
-                        0
-                    </h3>
-
-                    <p>
-                        Công nghệ
-                    </p>
-
-                </div>
-
-
-                <div class="stat">
-
-                    <h3 data-target="100">
-                        0
-                    </h3>
-
-                    <p>
-                        % Nỗ lực
-                    </p>
-
-                </div>
-
-
-                <div class="stat">
-
-                    <h3 data-target="24">
-                        0
-                    </h3>
-
-                    <p>
-                        Giờ sáng tạo
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================================
-         LIÊN HỆ
-    ========================================= -->
-
-    <section
-        class="contact"
-        id="contact">
-
-        <div class="container">
-
-
-            <div class="section-title">
-
-                <h2>
-
-                    Liên
-                    <span>
-                        hệ
-                    </span>
-
-                </h2>
-
-                <p>
-
-                    Bạn có thể liên hệ với mình
-                    qua các kênh bên dưới.
-
-                </p>
-
-            </div>
-
-
-            <div class="contact-grid">
-
-
-                <div class="contact-info">
-
-
-                    <div>
-
-                        <h3>
-                            👤 Tên
-                        </h3>
-
-                        <p>
-                            HIẾU CHIMTO
-                        </p>
-
-                    </div>
-
-
-                    <div>
-
-                        <h3>
-                            📍 Địa điểm
-                        </h3>
-
-                        <p>
-                            Việt Nam
-                        </p>
-
-                    </div>
-
-
-                    <div>
-
-                        <h3>
-                            📱 Zalo
-                        </h3>
-
-                        <p>
-                            Liên hệ qua Zalo
-                        </p>
-
-                    </div>
-
-
-                    <div>
-
-                        <h3>
-                            🌐 Facebook
-                        </h3>
-
-                        <p>
-                            Theo dõi HIẾU CHIMTO
-                            trên Facebook
-                        </p>
-
-                    </div>
-
-
-                    <div
-                        class="social-buttons"
-                        style="
-                            justify-content:
-                            flex-start;
-                        ">
-
-
-                        <a
-                            href="https://chat.zalo.me/"
-                            class="social zalo"
-                            target="_blank"
-                            rel="noopener noreferrer">
-
-                            Mở Zalo
-
-                        </a>
-
-
-                        <a
-                            href="https://www.facebook.com/le.trung.hieu.636031?locale=vi_VN"
-                            class="social facebook"
-                            target="_blank"
-                            rel="noopener noreferrer">
-
-                            Facebook
-
-                        </a>
-
-
-                    </div>
-
-                </div>
-
-
-                <!-- FORM -->
-
-                <form
-                    class="contact-form"
-                    id="contactForm">
-
-
-                    <div class="form-group">
-
-                        <label for="name">
-                            Họ và tên
-                        </label>
-
-                        <input
-                            type="text"
-                            id="name"
-                            placeholder="Nhập họ tên"
-                            required>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="email">
-                            Email
-                        </label>
-
-                        <input
-                            type="email"
-                            id="email"
-                            placeholder="example@gmail.com"
-                            required>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="message">
-                            Nội dung
-                        </label>
-
-                        <textarea
-                            id="message"
-                            placeholder="Nhập nội dung..."
-                            required></textarea>
-
-                    </div>
-
-
-                    <button
-                        type="submit"
-                        class="btn btn-primary">
-
-                        Gửi tin nhắn
-
-                    </button>
-
-
-                </form>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================================
-         NÚT FACEBOOK + ZALO NỔI
-    ========================================= -->
-
-    <div class="floating-social">
-
-
-        <a
-            href="https://chat.zalo.me/"
-            class="zalo"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Zalo">
-
-            Z
-
-        </a>
-
-
-        <a
-            href="https://www.facebook.com/le.trung.hieu.636031?locale=vi_VN"
-            class="facebook"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Facebook">
-
-            f
-
-        </a>
-
 
     </div>
 
+</section>
 
-    <!-- =========================================
-         NÚT LÊN ĐẦU
-    ========================================= -->
+<section class="facilities" id="facilities">
 
-    <button
-        id="topBtn"
-        title="Lên đầu trang">
+    <div class="container">
 
-        ↑
+        <div class="section-title reveal">
 
-    </button>
+            <small>Experience</small>
+
+            <h2>Tiện ích & Dịch vụ</h2>
+
+            <p>
+                Tận hưởng hệ thống tiện ích cao cấp được
+                thiết kế cho một kỳ nghỉ trọn vẹn.
+            </p>
+
+        </div>
+
+        <div class="facility-grid">
+
+            <div class="facility reveal">
+                <div class="facility-icon">🏊</div>
+                <h3>Infinity Pool</h3>
+                <p>Hồ bơi vô cực hướng biển.</p>
+            </div>
+
+            <div class="facility reveal">
+                <div class="facility-icon">🍽️</div>
+                <h3>Fine Dining</h3>
+                <p>Ẩm thực tinh tế từ các đầu bếp chuyên nghiệp.</p>
+            </div>
+
+            <div class="facility reveal">
+                <div class="facility-icon">💆</div>
+                <h3>Luxury Spa</h3>
+                <p>Thư giãn và phục hồi với liệu trình cao cấp.</p>
+            </div>
+
+            <div class="facility reveal">
+                <div class="facility-icon">🏖️</div>
+                <h3>Private Beach</h3>
+                <p>Không gian biển riêng tư và yên bình.</p>
+            </div>
+
+            <div class="facility reveal">
+                <div class="facility-icon">🍸</div>
+                <h3>Sky Bar</h3>
+                <p>Cocktail và hoàng hôn trên tầng cao.</p>
+            </div>
+
+            <div class="facility reveal">
+                <div class="facility-icon">🏋️</div>
+                <h3>Fitness</h3>
+                <p>Phòng gym hiện đại hoạt động 24/7.</p>
+            </div>
+
+            <div class="facility reveal">
+                <div class="facility-icon">🚗</div>
+                <h3>Airport Transfer</h3>
+                <p>Dịch vụ đưa đón sân bay riêng.</p>
+            </div>
+
+            <div class="facility reveal">
+                <div class="facility-icon">🌴</div>
+                <h3>Island Tour</h3>
+                <p>Khám phá những điểm đến tuyệt đẹp.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="experience">
+
+    <div class="container">
+
+        <div class="experience-content reveal">
+
+            <small>THE TRUNGHIEU EXPERIENCE</small>
+
+            <h2>
+                Slow down.<br>
+                Breathe. Enjoy.
+            </h2>
+
+            <p>
+                Đôi khi điều tuyệt vời nhất của một chuyến đi
+                không phải là bạn đã đi đâu, mà là bạn đã
+                cảm nhận được bao nhiêu.
+            </p>
+
+            <a href="#booking" class="btn btn-gold">
+                BẮT ĐẦU HÀNH TRÌNH
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="gallery" id="gallery">
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <small>Gallery</small>
+
+            <h2>Khoảnh khắc tại TRUNGHIEU</h2>
+
+            <p>
+                Một vài hình ảnh đại diện cho không gian
+                nghỉ dưỡng và trải nghiệm của chúng tôi.
+            </p>
+
+        </div>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item reveal">
+                <img
+                    src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1200&q=85"
+                    alt="Resort"
+                >
+            </div>
+
+            <div class="gallery-item reveal">
+                <img
+                    src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=900&q=85"
+                    alt="Pool"
+                >
+            </div>
+
+            <div class="gallery-item reveal">
+                <img
+                    src="https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?auto=format&fit=crop&w=900&q=85"
+                    alt="Beach"
+                >
+            </div>
+
+            <div class="gallery-item reveal">
+                <img
+                    src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1000&q=85"
+                    alt="Hotel"
+                >
+            </div>
+
+            <div class="gallery-item reveal">
+                <img
+                    src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1000&q=85"
+                    alt="Room"
+                >
+            </div>
+
+            <div class="gallery-item reveal">
+                <img
+                    src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1000&q=85"
+                    alt="Spa"
+                >
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="booking" id="booking">
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <small>Reservation</small>
+
+            <h2>Đặt phòng</h2>
+
+            <p>
+                Gửi thông tin để nhận tư vấn về phòng,
+                villa và dịch vụ nghỉ dưỡng.
+            </p>
+
+        </div>
+
+        <div class="booking-box reveal">
+
+            <form id="bookingForm" class="booking-form">
+
+                <div class="form-group">
+                    <label>Họ và tên</label>
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Nhập họ và tên"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>Số điện thoại</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Nhập số điện thoại"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>Ngày nhận phòng</label>
+                    <input
+                        type="date"
+                        id="checkin"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>Ngày trả phòng</label>
+                    <input
+                        type="date"
+                        id="checkout"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>Số khách</label>
+
+                    <select id="guests">
+                        <option>1 khách</option>
+                        <option>2 khách</option>
+                        <option>3 khách</option>
+                        <option>4 khách</option>
+                        <option>5 khách</option>
+                        <option>6+ khách</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Loại phòng</label>
+
+                    <select id="room">
+                        <option>Deluxe Ocean Room</option>
+                        <option>Private Pool Villa</option>
+                        <option>Presidential Villa</option>
+                    </select>
+                </div>
+
+                <div class="form-group full">
+
+                    <label>Yêu cầu đặc biệt</label>
+
+                    <textarea
+                        id="message"
+                        placeholder="Ví dụ: phòng honeymoon, đón sân bay..."
+                    ></textarea>
+
+                </div>
+
+                <div class="form-group full">
+
+                    <button
+                        type="submit"
+                        class="btn btn-gold"
+                    >
+                        GỬI YÊU CẦU ĐẶT PHÒNG
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="contact" id="contact">
+
+    <div class="container contact-grid">
+
+        <div class="contact-info reveal">
+
+            <small style="color:#b18a40;letter-spacing:4px;">
+                CONTACT
+            </small>
+
+            <h2>
+                Hãy bắt đầu<br>
+                kỳ nghỉ của bạn.
+            </h2>
+
+            <p>
+                Đội ngũ TRUNGHIEU luôn sẵn sàng hỗ trợ bạn
+                trong việc lựa chọn phòng, villa và các
+                trải nghiệm phù hợp.
+            </p>
+
+            <div class="contact-detail">
+
+                <strong>📍 Địa điểm</strong>
+
+                <span>
+                    TP. Thái Nguyên, Việt Nam
+                </span>
+
+            </div>
+
+            <div class="contact-detail">
+
+                <strong>📞 Hotline</strong>
+
+                <span>
+                    +84 859 080 507
+                </span>
+
+            </div>
+
+            <div class="contact-detail">
+
+                <strong>✉ Email</strong>
+
+                <span>
+                    letrunghieu08052007@gmail.com
+                </span>
+
+            </div>
+
+            <div class="social-links">
+
+                <a
+                    class="social-btn facebook"
+                    href="https://www.facebook.com/le.trung.hieu.636031?locale=vi_VN"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    f &nbsp; Facebook
+                </a>
+
+                <a
+                    class="social-btn zalo"
+                    href="https://chat.zalo.me/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Z &nbsp; Zalo
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="contact-card reveal">
+
+            <h3>TRUNGHIEU</h3>
+
+            <p>Luxury Resort & Spa</p>
+
+            <br>
+
+            <p>
+                Một điểm đến dành cho những người
+                tìm kiếm sự bình yên, riêng tư và
+                trải nghiệm nghỉ dưỡng đẳng cấp.
+            </p>
+
+            <br>
+
+            <a href="#booking" class="btn btn-gold">
+                ĐẶT PHÒNG
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+
+                <h3>
+                    TRUNGHIEU RESORT & SPA
+                </h3>
+
+                <p>
+                    Luxury beyond expectations.
+                    Trải nghiệm nghỉ dưỡng 5 sao
+                    được tạo nên từ những điều tinh tế nhất.
+                </p>
+
+            </div>
+
+            <div>
+
+                <h4>KHÁM PHÁ</h4>
+
+                <ul>
+                    <li><a href="#about">Về resort</a></li>
+                    <li><a href="#rooms">Phòng & Villa</a></li>
+                    <li><a href="#facilities">Tiện ích</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                </ul>
+
+            </div>
+
+            <div>
+
+                <h4>LIÊN HỆ</h4>
+
+                <ul>
+                    <li>
+                        <a
+                            href="https://www.facebook.com/le.trung.hieu.636031?locale=vi_VN"
+                            target="_blank"
+                        >
+                            Facebook
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://chat.zalo.me/"
+                            target="_blank"
+                        >
+                            Zalo
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#booking">
+                            Đặt phòng
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © <span id="year"></span>
+            TRUNGHIEU RESORT & SPA.
+            All Rights Reserved.
+        </div>
+
+    </div>
+
+</footer>
+
+<script>
+
+    const header = document.getElementById("header");
+
+    window.addEventListener("scroll", function () {
+
+        if (window.scrollY > 50) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+
+    });
 
 
-    <!-- =========================================
-         FOOTER
-    ========================================= -->
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
 
-    <footer>
-
-        ©
-
-        <span id="year"></span>
-
-        <strong>
-            HIẾU CHIMTO
-        </strong>
-
-        - All Rights Reserved.
-
-    </footer>
+    menuBtn.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+    });
 
 
-    <!-- =========================================
-         JAVASCRIPT
-    ========================================= -->
+    document.querySelectorAll(".nav-links a").forEach(function(link) {
 
-    <script>
+        link.addEventListener("click", function() {
+            navLinks.classList.remove("active");
+        });
 
-        /* =====================================
-           MENU MOBILE
-        ===================================== */
-
-        const menuBtn =
-            document.getElementById("menuBtn");
-
-        const navLinks =
-            document.getElementById("navLinks");
+    });
 
 
-        menuBtn.addEventListener(
-            "click",
-            function () {
+    const reveals = document.querySelectorAll(".reveal");
 
-                navLinks.classList.toggle(
-                    "active"
-                );
+    const observer = new IntersectionObserver(
+        function(entries) {
 
-            }
-        );
+            entries.forEach(function(entry) {
 
-
-        document
-            .querySelectorAll(".nav-links a")
-            .forEach(function (link) {
-
-                link.addEventListener(
-                    "click",
-                    function () {
-
-                        navLinks.classList.remove(
-                            "active"
-                        );
-
-                    }
-                );
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                }
 
             });
 
-
-        /* =====================================
-           NĂM HIỆN TẠI
-        ===================================== */
-
-        document
-            .getElementById("year")
-            .textContent =
-            new Date().getFullYear();
+        },
+        {
+            threshold: 0.12
+        }
+    );
 
 
-        /* =====================================
-           NÚT LÊN ĐẦU
-        ===================================== */
-
-        const topBtn =
-            document.getElementById("topBtn");
+    reveals.forEach(function(element) {
+        observer.observe(element);
+    });
 
 
-        window.addEventListener(
-            "scroll",
-            function () {
+    const bookingForm =
+        document.getElementById("bookingForm");
 
-                if (window.scrollY > 400) {
+    bookingForm.addEventListener("submit", function(event) {
 
-                    topBtn.style.display =
-                        "block";
+        event.preventDefault();
 
-                } else {
+        const name =
+            document.getElementById("name").value;
 
-                    topBtn.style.display =
-                        "none";
+        const room =
+            document.getElementById("room").value;
 
-                }
+        const checkin =
+            document.getElementById("checkin").value;
 
-            }
+        const checkout =
+            document.getElementById("checkout").value;
+
+        alert(
+            "Cảm ơn " + name +
+            "!\n\n" +
+            "Yêu cầu đặt phòng của bạn đã được ghi nhận." +
+            "\n\nPhòng: " + room +
+            "\nNhận phòng: " + checkin +
+            "\nTrả phòng: " + checkout +
+            "\n\nĐội ngũ TRUNGHIEU sẽ liên hệ với bạn."
         );
 
+        bookingForm.reset();
 
-        topBtn.addEventListener(
-            "click",
-            function () {
-
-                window.scrollTo({
-
-                    top: 0,
-
-                    behavior: "smooth"
-
-                });
-
-            }
-        );
+    });
 
 
-        /* =====================================
-           HIỆU ỨNG ĐẾM SỐ
-        ===================================== */
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
 
-        const counters =
-            document.querySelectorAll(
-                ".stat h3"
-            );
-
-
-        const observer =
-            new IntersectionObserver(
-
-                function (entries) {
-
-                    entries.forEach(
-                        function (entry) {
-
-                            if (
-                                !entry.isIntersecting
-                            ) {
-                                return;
-                            }
-
-
-                            const counter =
-                                entry.target;
-
-
-                            const target =
-                                Number(
-                                    counter.dataset.target
-                                );
-
-
-                            let current = 0;
-
-
-                            const update =
-                                function () {
-
-                                    current +=
-                                        Math.ceil(
-                                            target / 40
-                                        );
-
-
-                                    if (
-                                        current >=
-                                        target
-                                    ) {
-
-                                        counter.textContent =
-                                            target + "+";
-
-                                        return;
-
-                                    }
-
-
-                                    counter.textContent =
-                                        current;
-
-
-                                    requestAnimationFrame(
-                                        update
-                                    );
-
-                                };
-
-
-                            update();
-
-
-                            observer.unobserve(
-                                counter
-                            );
-
-                        }
-                    );
-
-                },
-
-                {
-                    threshold: 0.5
-                }
-
-            );
-
-
-        counters.forEach(
-            function (counter) {
-
-                observer.observe(counter);
-
-            }
-        );
-
-
-        /* =====================================
-           FORM LIÊN HỆ
-        ===================================== */
-
-        const contactForm =
-            document.getElementById(
-                "contactForm"
-            );
-
-
-        contactForm.addEventListener(
-            "submit",
-            function (event) {
-
-                event.preventDefault();
-
-
-                const name =
-                    document.getElementById(
-                        "name"
-                    ).value;
-
-
-                alert(
-                    "Cảm ơn " +
-                    name +
-                    "! Mình đã nhận được thông tin của bạn."
-                );
-
-
-                contactForm.reset();
-
-            }
-        );
-
-    </script>
-
+</script>
 
 </body>
-
 </html>
